@@ -117,9 +117,9 @@ class Psu(PsuBase):
         """
         is_valid, voltage = self.voltage_sensor.get_reading()
         if not is_valid:
-            return None
+            voltage = 0.0
 
-        return "{:.1f}".format(voltage)
+        return float(voltage)
 
     def get_voltage_low_threshold(self):
         """
